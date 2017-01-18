@@ -1,6 +1,7 @@
 import React from 'react'
 import Constants from '../constants';
 import ReactStars from 'react-stars'
+import _ from  'lodash'
 
 // Stateless cell components for Table component
 function SortHeaderCell ({name, sortBy, sortKey, sortDesc, columnKey}) {
@@ -30,16 +31,21 @@ class AppTable extends React.Component {
     }
   }
 
-  doesMatch (str) {
-    return (key) => (key + '').toLowerCase().indexOf(str) !== -1
+  doesMatch (str, key, name) {
+    // поиск по жанру
+    if(name === 'genre') {
+      key = Constants.MovieGenre.translate(key);
+    }
+    return key.toString().toLowerCase().indexOf(str) !== -1
   }
 
   filterData () {
     const {data, filterString} = this.props
     const str = filterString.toLowerCase()
+
     return str !== ''
-      ? data.filter((r) => Object.values(r).some(this.doesMatch(str)))
-      : data
+        ? data.filter((r) => _.some(r, this.doesMatch.bind(this, str)))
+        : data
   }
 
   sortData () {
