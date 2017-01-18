@@ -122,7 +122,7 @@ class AppTable extends React.Component {
 
     return (
       <div>
-        <input className='filter-input' value={filterString}
+        <input className="form-control" value={filterString}
           onChange={this.handleFilterStringChange()}
           type='text' placeholder='Поиск'
           autoCorrect='off' autoCapitalize='off' spellCheck='false' />
