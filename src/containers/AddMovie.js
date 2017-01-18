@@ -90,8 +90,6 @@ class AddMovie extends Component {
   render() {
     let input;
 
-    console.info(this.state);
-
     const { name, genre, stars, year} = this.state;
 
     return (

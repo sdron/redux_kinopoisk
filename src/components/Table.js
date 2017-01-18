@@ -114,8 +114,6 @@ class AppTable extends React.Component {
 
     const data = this.sortData().filterData();
 
-      console.info(data);
-
     return (
       <div>
         <input className='filter-input' value={filterString}

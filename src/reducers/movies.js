@@ -25,7 +25,6 @@ const movies = (state = items || [], action) => {
           ...state,
           movie(undefined, action)
         ];
-        console.info(JSON.stringify(movies));
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(movies));
       return movies;
     default:
