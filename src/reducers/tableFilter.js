@@ -1,4 +1,4 @@
-import Constants from '../constants'
+import Actions from '../constants/Actions'
 
 const defaultVal = {
   filterString: '',
@@ -8,12 +8,12 @@ const defaultVal = {
 
 const tableFilter = (state = defaultVal, action) => {
   switch (action.type) {
-    case Constants.Actions.FILTER_DATA:
+    case Actions.FILTER_DATA:
       return {
         ...state,
         filterString: action.filterString.toLowerCase()
       }
-    case Constants.Actions.SORT_DATA:
+    case Actions.SORT_DATA:
       return {
         ...state,
         sortKey: action.sortKey,

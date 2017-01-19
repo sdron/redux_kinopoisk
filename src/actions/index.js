@@ -1,4 +1,4 @@
-import Constants from '../constants'
+import Actions from '../constants/Actions'
 import _ from 'lodash';
 
 export const addMovie = (name, genre, stars, year) => ({
@@ -8,11 +8,11 @@ export const addMovie = (name, genre, stars, year) => ({
 })
 
 export const filterBy = (filterString) => ({
-  type: Constants.Actions.FILTER_DATA,
+  type: Actions.FILTER_DATA,
   filterString
 })
 
 export const sortBy = (sortKey) => ({
-  type: Constants.Actions.SORT_DATA,
+  type: Actions.SORT_DATA,
   sortKey
 })

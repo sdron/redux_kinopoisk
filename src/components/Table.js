@@ -1,5 +1,5 @@
 import React from 'react'
-import Constants from '../constants';
+import MovieGenre from '../constants/MovieGenre';
 import ReactStars from 'react-stars'
 import _ from  'lodash'
 
@@ -34,7 +34,7 @@ class AppTable extends React.Component {
   doesMatch (str, key, name) {
     // поиск по жанру
     if(name === 'genre') {
-      key = Constants.MovieGenre.translate(key);
+      key = MovieGenre.translate(key);
     }
     return key.toString().toLowerCase().indexOf(str) !== -1
   }
@@ -93,7 +93,7 @@ class AppTable extends React.Component {
                   {movie.name}
                 </td>
                 <td>
-                  {Constants.MovieGenre.translate(movie.genre)}
+                  {MovieGenre.translate(movie.genre)}
                 </td>
                 <td>
                   {movie.year}

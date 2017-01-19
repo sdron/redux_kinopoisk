@@ -3,7 +3,7 @@ import _ from 'lodash';
 import Promise from 'bluebird';
 import { connect } from 'react-redux'
 import { addMovie } from '../actions';
-import Constants from '../constants';
+import MovieGenre from '../constants/MovieGenre';
 import ReactStars from 'react-stars'
 
 // todo можно в константу закинуть
@@ -13,7 +13,7 @@ const currentYear = new Date().getFullYear();
 
 const DEFAULT_STATE = {
   name: '',
-  genre: Constants.MovieGenre.ACTION,
+  genre: MovieGenre.ACTION,
   stars: null,
   error: null,
   year: currentYear
@@ -111,7 +111,7 @@ class AddMovie extends Component {
 
               <div className="form-group">
                 <select value={genre} onChange={this.handleChangeField.bind(this, 'genre')} className="form-control">
-                  {_.map(Constants.MovieGenre.names(), (name, id) =>
+                  {_.map(MovieGenre.names(), (name, id) =>
                       <option key={id} value={id}>{name}</option>
                   )}
                 </select>
